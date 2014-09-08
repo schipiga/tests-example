@@ -1,0 +1,47 @@
+unit:
+- User:
+    - save with valid values;
+    - don't save with empty value;
+    - validate length of first_name;
+    - validate length of last_name;
+    - validate length of email;
+    - validate format of email;
+- Post:
+    - save with valid values;
+    - don't save with empty values;
+    - validate length of title;
+    - validate length of content;
+
+integrational:
+    - check registration;
+    - check post creation;
+    - check login page;
+    - check posts page;
+
+fuctional:
+    - authentication/log out;
+        - launch server;
+        - open login page;
+        - authenticate;
+        - logout;
+
+    - create post via all page;
+        - launch server;
+        - open login page;
+        - authenticate;
+        - visit all posts page;
+        - click new post;
+        - fill fields;
+        - submit post;
+        - check post is created;
+
+    - create post via one page;
+        - launch server;
+        - open login page;
+        - authenticate;
+        - visit all posts page;
+        - visit post;
+        - click new post;
+        - fill fields;
+        - submit post;
+        - check post is created;
