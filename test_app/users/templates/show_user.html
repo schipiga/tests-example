@@ -5,5 +5,7 @@
     <div>First Name: {{ user.first_name }}</div>
     <div>Last Name: {{ user.last_name }}</div>
 
+    <a href="{% url 'show_posts' user.id %}">My posts</a>
+
     <a href="{% url 'logout' %}">Logout</a>
 {% endblock %}
