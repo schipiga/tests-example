@@ -10,7 +10,7 @@ from users.models import User
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=100)
-    content = models.TextField()
-    pub_date = models.DateTimeField()
-    user = models.ForeignKey(User)
+    title = models.CharField(max_length=100, null=False, blank=False)
+    content = models.TextField(null=False, blank=False)
+    pub_date = models.DateTimeField(null=False, blank=False)
+    user = models.ForeignKey(User, null=False, blank=False)
