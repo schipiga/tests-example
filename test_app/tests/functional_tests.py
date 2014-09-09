@@ -27,17 +27,29 @@ class FunctionalTestCase(TestCase):
     def test_authentication(self):
         self.web_app.click_logout()
 
+        self.assertEqual(self.web_app.page_title, 'Login page')
+
     def test_view_all_posts_and_create_post(self):
+        post_title = 'another post title'
+        post_content = 'another post content'
+
         self.web_app.click_posts()
         self.web_app.click_new_post()
-        self.web_app.set_post_title('another post title')
-        self.web_app.set_post_content('another post content')
+        self.web_app.set_post_title(post_title)
+        self.web_app.set_post_content(post_content)
         self.web_app.submit_post()
 
+        self.assertIn(post_title, self.web_app.page_source)
+
     def test_view_one_post_and_create_post(self):
+        post_title = 'just another post title'
+        post_content = 'just another post content'
+
         self.web_app.click_posts()
         self.web_app.click_first_post()
         self.web_app.click_new_post()
-        self.web_app.set_post_title('just another post title')
-        self.web_app.set_post_content('just another post content')
+        self.web_app.set_post_title(post_title)
+        self.web_app.set_post_content(post_content)
         self.web_app.submit_post()
+
+        self.assertIn(post_title, self.web_app.page_source)

@@ -15,6 +15,14 @@ class WebApp(object):
         self.browser.switch_to_active_tab()
         self.browser.open(url)
 
+    @property
+    def page_source(self):
+        return self.browser.web_driver.page_source
+
+    @property
+    def page_title(self):
+        return self.browser.web_driver.title
+
     def click_first_post(self):
         elem = self.browser.find_element('id_first_post')
         elem.click()
