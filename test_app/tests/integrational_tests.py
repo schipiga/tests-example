@@ -24,7 +24,7 @@ class AuthenticationTestCase(TestCase):
         self.client = Client()
 
         User.objects.all().delete()
-        self.user = User()
+        self.user = User(**USER_DATA)
         self.user.save()
 
     def test_login(self):

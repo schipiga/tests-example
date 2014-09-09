@@ -71,7 +71,7 @@ class PostTestCase(TestCase):
 
         Post.objects.all().delete()
         self.post_data = POST_DATA.copy()
-        self.post_data.update({'pub_data': datetime.now(), 'user': user})
+        self.post_data.update({'pub_date': datetime.now(), 'user': user})
 
     def test_post_create(self):
         post = Post(**self.post_data)
@@ -87,8 +87,7 @@ class PostTestCase(TestCase):
 
         self.assertEqual(Post.objects.count(), 0)
 
-    def test_post_no_data
-        post = Post()
-        post.save()
-
-        self.assertEqual(Post.objects.count(), 0)
+    def test_post_no_data(self):
+        with self.assertRaises(IntegrityError):
+            post = Post()
+            post.save()

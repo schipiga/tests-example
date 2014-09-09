@@ -13,7 +13,7 @@ from posts.models import Post
 
 
 def show_posts(request, user_id):
-    posts = Post.objects.filter(user=user_id)    
+    posts = Post.objects.filter(user=user_id)
     return render(request, 'show_posts.html',
                   {'user_id': user_id, 'posts': posts})
 
