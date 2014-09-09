@@ -20,5 +20,28 @@ integrational:
 
 fuctional:
     - authentication/log out;
+        - launch server;
+        - open login page;
+        - authenticate;
+        - logout;
+
     - create post via all page;
+        - launch server;
+        - open login page;
+        - authenticate;
+        - visit all posts page;
+        - click new post;
+        - fill fields;
+        - submit post;
+        - check post is created;
+
     - create post via one page;
+        - launch server;
+        - open login page;
+        - authenticate;
+        - visit all posts page;
+        - visit post;
+        - click new post;
+        - fill fields;
+        - submit post;
+        - check post is created;
