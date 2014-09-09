@@ -4,6 +4,6 @@
     <form action="{% url 'create_post' user_id %}" method="post">
         {% csrf_token %}
         {{ form }}
-        <input id="submit" type="Submit" value="Create post" />
+        <input id="id_post" type="Submit" value="Create post" />
     </form>
 {% endblock %}

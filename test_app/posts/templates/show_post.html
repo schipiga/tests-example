@@ -3,5 +3,5 @@
 {% block body %}
     <h3>{{ post.title }}</h3>
     <div>{{ post.content }}</div>
-    <a href="{% url 'create_post' user_id %}">create post</a>
+    <a id="id_new_post" href="{% url 'create_post' user_id %}">create post</a>
 {% endblock %}

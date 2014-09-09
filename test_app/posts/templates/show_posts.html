@@ -2,7 +2,7 @@
 
 {% block body %}
     {% for post in posts %}
-        <a href="{% url 'show_post' user_id post.id %}">{{ post.title }}</a>
+        <a {% if forloop.first %}id="id_first_post"{% endif %} href="{% url 'show_post' user_id post.id %}">{{ post.title }}</a>
     {% endfor %}
-    <a href="{% url 'create_post' user_id %}">create post</a>
+    <a id="id_new_post" href="{% url 'create_post' user_id %}">create post</a>
 {% endblock %}
