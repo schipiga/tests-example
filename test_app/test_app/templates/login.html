@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 
+{% block title %}
+Login page
+{% endblock %}
+
 {% block body %}
-  <div id="login">
-  <form action="{% url 'login' %}" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input id="id_login" type="Submit" value="Log in" />
-  </form>
-  <a id="signup" href="{% url 'registration' %}">Sign Up</a>
-  </div>
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <div><input id="id_login" type="Submit" value="Log in" /></div>
+    </form>
+    <div><a id="signup" href="{% url 'registration' %}">Sign Up</a></div>
 {% endblock %}

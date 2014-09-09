@@ -19,7 +19,7 @@ def login(request):
                 login_user(request, user)
                 return redirect(reverse('show_user', args=(user.id,)))
     form = SessionForm()
-    return render(request, 'login.html', {'form': form})
+    return render(request, 'login.html', {'form': form.as_p()})
 
 
 def logout(request):
@@ -34,4 +34,11 @@ def registration(request):
             form.save()
             return redirect(reverse('login'))
     form = RegistrationForm()   
-    return render(request, "registration.html", {"form": form})
+    return render(request, "registration.html", {"form": form.as_p()})
+
+
+def main(request):
+    if request.session.get('token'):
+        return redirect(reverse('show_user', args=(request.session['user'],)))
+    else:
+        return redirect(reverse('login'))

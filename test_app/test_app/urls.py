@@ -7,13 +7,14 @@ from django.contrib import admin
 
 from posts.views import show_posts, show_post, create_post
 from users.views import show_users, show_user, create_user
-from views import login, logout, registration
+from views import login, logout, registration, main
 
 
 urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
 
+    url(r'^$', main, name='main'),
     url(r'^login$', login, name='login'),
     url(r'^logout$', logout, name='logout'),
     url(r'^registration$', registration, name='registration'),

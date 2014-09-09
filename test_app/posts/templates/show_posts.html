@@ -1,8 +1,16 @@
 {% extends "base.html" %}
 
+{% block title %}
+All posts page
+{% endblock %}
+
 {% block body %}
     {% for post in posts %}
-        <a {% if forloop.first %}id="id_first_post"{% endif %} href="{% url 'show_post' user_id post.id %}">{{ post.title }}</a>
+        <div>
+            <a {% if forloop.first %}id="id_first_post"{% endif %} href="{% url 'show_post' user_id post.id %}">{{ post.title }}</a>
+        </div>
     {% endfor %}
-    <a id="id_new_post" href="{% url 'create_post' user_id %}">create post</a>
+    <div>
+        <a id="id_new_post" href="{% url 'create_post' user_id %}">create post</a>
+    </div>
 {% endblock %}

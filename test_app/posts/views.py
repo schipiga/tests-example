@@ -17,9 +17,12 @@ def show_posts(request, user_id):
     return render(request, 'show_posts.html',
                   {'user_id': user_id, 'posts': posts})
 
+
 def show_post(request, user_id, post_id):
     post = Post.objects.get(id=post_id, user=user_id)
-    return render(request, 'show_post.html', {'user_id': user_id, 'post': post})
+    return render(request, 'show_post.html',
+                  {'user_id': user_id, 'post': post})
+
 
 def create_post(request, user_id):
     if request.method == 'POST':
@@ -30,4 +33,5 @@ def create_post(request, user_id):
             form.save()
             return redirect(reverse('show_posts', args=(user_id,)))
     form = PostForm()
-    return render(request, 'create_post.html', {'user_id': user_id, 'form': form})
+    return render(request, 'create_post.html',
+                  {'user_id': user_id, 'form': form.as_p()})

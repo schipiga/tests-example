@@ -1,11 +1,17 @@
 {% extends "base.html" %}
 
+{% block title %}
+User profile page
+{% endblock %}
+
 {% block body %}
     <div>E-mail: {{ user.email }}</div>
     <div>First Name: {{ user.first_name }}</div>
     <div>Last Name: {{ user.last_name }}</div>
-
-    <a id="id_posts" href="{% url 'show_posts' user.id %}">My posts</a>
-
-    <a id="id_logout" href="{% url 'logout' %}">Logout</a>
+    <div>
+        <a id="id_posts" href="{% url 'show_posts' user.id %}">My posts</a>
+    </div>
+    <div>
+        <a id="id_logout" href="{% url 'logout' %}">Logout</a>
+    </div>
 {% endblock %}
