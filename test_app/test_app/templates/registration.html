@@ -8,7 +8,7 @@ Registration page
     <form action="{% url 'registration' %}" method="post">
         {% csrf_token %}
         {{ form }}
-        <div><a id="signup" href="{% url 'login' %}">Log in</a></div>
+        <div><input id="submit" type="Submit" value="Sign up" /></div>
     </form>
-    <div><input id="submit" type="Submit" value="Sign up" /></div>
+    <div><a id="signup" href="{% url 'login' %}">Log in</a></div>
 {% endblock %}
